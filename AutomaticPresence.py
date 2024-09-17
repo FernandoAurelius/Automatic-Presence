@@ -3,9 +3,9 @@ import pyautogui, time
 
 def main():
     abrir_navegador()
-    scrollar_ebook()
+    # scrollar_ebook()
     # descobrir_posicao_botao()
-    # assar_slides()
+    passar_slides()
 
 
 def abrir_navegador():
@@ -27,7 +27,7 @@ def passar_slides():
     dir_y_modelo3 = 520
     esq_x_modelo3 = 329
     esq_y_modelo3 = 519
-    loops = 20
+    loops = 10
     pyautogui.FAILSAFE = False
     while True:
         for i in range(1, loops):
