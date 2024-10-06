@@ -1,52 +1,60 @@
-import pyautogui, time
+import pyautogui
+import time
 
 
 def main():
-    abrir_navegador()
-    # scrollar_ebook()
-    # descobrir_posicao_botao()
-    passar_slides()
+    open_browser()
+    # scroll_ebook()
+    # find_button_position()
+    advance_slides()
 
 
-def abrir_navegador():
+def open_browser():
     pyautogui.keyDown('alt')
     pyautogui.press('tab')
     pyautogui.keyUp('alt')
 
 
-def passar_slides():
+def advance_slides():
+    # First slide model
     dir_x_modelo1 = 1417
     dir_y_modelo1 = 566
     esq_x_modelo1 = 490
     esq_y_modelo1 = 565
+    
+    # Second slide model
     dir_x_modelo2 = 1419
     dir_y_modelo2 = 568
     esq_x_modelo2 = 504
     esq_y_modelo2 = 563
+    
+    # Third slide model
     dir_x_modelo3 = 1568
     dir_y_modelo3 = 520
     esq_x_modelo3 = 329
     esq_y_modelo3 = 519
+    
     loops = 10
     pyautogui.FAILSAFE = False
     while True:
         for i in range(1, loops):
             pyautogui.move(xOffset=esq_x_modelo3, yOffset=esq_y_modelo3, duration=1)
-            pyautogui.click(dir_x_modelo3, dir_y_modelo3, interval=0.5)
+            pyautogui.click(dir_x_modelo1, dir_y_modelo1, interval=0.5)
             time.sleep(4)
         for i in range(1, (loops - 2)):
             pyautogui.move(xOffset=dir_x_modelo3, yOffset=dir_y_modelo3, duration=1.5)
-            pyautogui.click(esq_x_modelo3, esq_y_modelo3, interval=0.5)
+            pyautogui.click(esq_x_modelo1, esq_y_modelo1, interval=0.5)
             time.sleep(4)
 
 
-def descobrir_posicao_botao():
+def find_button_position():
     while True:
         pos = pyautogui.position()
         print(f'x: {pos.x}, y: {pos.y}')
         time.sleep(2)
 
-def scrollar_ebook():
+
+def scroll_ebook():
     pyautogui.FAILSAFE = False
     pyautogui.moveTo(1095, 674)
     while True:
@@ -54,7 +62,7 @@ def scrollar_ebook():
             pyautogui.scroll(-100)
             pyautogui.moveTo(1095, 674, 0.5)
             pyautogui.moveTo(1188, 674, 0.5)
-        for i in range (1, 200):
+        for i in range(1, 200):
             pyautogui.scroll(100)
             pyautogui.moveTo(1095, 674, 0.5)
             pyautogui.moveTo(1188, 674, 0.5)
