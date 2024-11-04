@@ -5,8 +5,8 @@ import time
 def main():
     open_browser()
     # scroll_ebook()
-    # find_button_position()
-    advance_slides()
+    find_button_position()
+    # advance_slides()
 
 
 def open_browser():
@@ -16,34 +16,22 @@ def open_browser():
 
 
 def advance_slides():
-    # First slide model
-    dir_x_modelo1 = 1417
-    dir_y_modelo1 = 566
-    esq_x_modelo1 = 490
-    esq_y_modelo1 = 565
-    
-    # Second slide model
-    dir_x_modelo2 = 1419
-    dir_y_modelo2 = 568
-    esq_x_modelo2 = 504
-    esq_y_modelo2 = 563
-    
-    # Third slide model
-    dir_x_modelo3 = 1568
-    dir_y_modelo3 = 520
-    esq_x_modelo3 = 329
-    esq_y_modelo3 = 519
+    # Modelo novo
+    dir_x = 1848
+    esq_x = 211
+    dir_y = 767
+    esq_y = 880
     
     loops = 10
     pyautogui.FAILSAFE = False
     while True:
         for i in range(1, loops):
-            pyautogui.move(xOffset=esq_x_modelo3, yOffset=esq_y_modelo3, duration=1)
-            pyautogui.click(dir_x_modelo1, dir_y_modelo1, interval=0.5)
+            pyautogui.move(xOffset=esq_x, yOffset=esq_y, duration=1)
+            pyautogui.click(dir_x, dir_y, interval=0.5)
             time.sleep(4)
         for i in range(1, (loops - 2)):
-            pyautogui.move(xOffset=dir_x_modelo3, yOffset=dir_y_modelo3, duration=1.5)
-            pyautogui.click(esq_x_modelo1, esq_y_modelo1, interval=0.5)
+            pyautogui.move(xOffset=dir_x, yOffset=dir_y, duration=1.5)
+            pyautogui.click(esq_x, esq_y, interval=0.5)
             time.sleep(4)
 
 
